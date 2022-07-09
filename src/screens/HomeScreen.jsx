@@ -1,7 +1,7 @@
 import { View, Text, SafeAreaView, Image, TextInput, ScrollView } from 'react-native';
 import React from 'react';
 import { AdjustmentsIcon, ChevronDownIcon, SearchIcon, UserCircleIcon } from 'react-native-heroicons/outline';
-import Categories from '../components/Categories';
+import { Categories, FeaturedRow } from '../components';
 
 const HomeScreen = () => {
   return (
@@ -44,7 +44,21 @@ const HomeScreen = () => {
       >
         <Categories />
 
-        {/* 3 Featured Rows */}
+        <FeaturedRow
+          id='123'
+          title='Featured'
+          description='Paid placements from our partners'
+        />
+        <FeaturedRow
+          id='1234'
+          title='Tasty Discounts'
+          description='Everyone&#39;s been enjoying these juicy discounts!'
+        />
+        <FeaturedRow
+          id='12345'
+          title='Offers near you!'
+          description='why not support your local restaurant tonight!'
+        />
       </ScrollView>
     </SafeAreaView>
   )
