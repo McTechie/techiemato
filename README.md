@@ -1,5 +1,5 @@
 <h1 align="center">
-  Techiebay
+  Techiemato
 </h1>
 <p align="center">
   <a href="https://reactnative.dev/">
