@@ -1,6 +1,7 @@
 {
   "expo": {
     "name": "techiemato",
+    "owner": "McTechie",
     "slug": "techiemato",
     "version": "1.0.0",
     "orientation": "portrait",
