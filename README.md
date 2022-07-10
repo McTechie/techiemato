@@ -12,7 +12,7 @@
     <img alt="Redux" src="https://redux-toolkit.js.org/img/redux.svg" width="45" />
   </a>
   <a href="https://www.sanity.io">
-    <img style='border-radius: 50%' alt="Sanity" src="https://avatars.githubusercontent.com/u/17177659?s=200&v=4" width="40" />
+    <img style="border-radius: 50%" alt="Sanity" src="https://avatars.githubusercontent.com/u/17177659?s=200&v=4" width="40" />
   </a>
 </p>
 
@@ -47,6 +47,6 @@
 
 ---
 
-### App Walkthrough
+## App Walk-through
 
-![App Walkthrough](./readme-utils/screencast.gif)
+<p align="center"><img alt="App Walk-through" src="./readme-utils/screencast.gif" width="200" /></p>
