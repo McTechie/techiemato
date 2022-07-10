@@ -23,7 +23,7 @@ const BasketScreen = () => {
   return (
     <SafeAreaView className='flex-1 bg-whte'>
       <View className='flex-1 bg-gray-100'>
-        <View className='p-5 border-b border-[#f43f5e] bg-white shadow-xs'>
+        <View className='p-5 border-b border-rose-500 bg-white shadow-xs'>
           <View>
             <Text className='text-lg font-bold text-center'>Basket</Text>
             <Text className='text-center text-gray-400'>
@@ -41,21 +41,21 @@ const BasketScreen = () => {
 
         <View className='flex-row items-center space-x-4 px-4 py-3 bg-white my-5'>
           <Image
-            source={require('../../assets/techiemato.png')}
-            className='h-7 w-7 bg-gray-300 p-4 rounded-full'
+            source={{ uri: 'https://media.giphy.com/media/nTxpQZNIgu6CQAv9in/giphy.gif' }}
+            className='h-7 w-7 bg-gray-200 p-4 rounded-full'
           />
           <Text className='flex-1'>
             Deliver in 50-75 mins
           </Text>
           <TouchableOpacity>
-            <Text className='text-[#f43f5e]'>Change</Text>
+            <Text className='text-rose-500'>Change</Text>
           </TouchableOpacity>
         </View>
 
         <ScrollView className='divide-y divide-gray-300'>
           {Object.entries(groupedItems).map(([key, items]) => (
             <View key={key} className='flex-row items-center space-x-3 bg-white py-2 px-5'>
-              <Text className='text-[#f43f5e]'>
+              <Text className='text-rose-500'>
                 {items.length} x
               </Text>
               
@@ -73,7 +73,7 @@ const BasketScreen = () => {
               </Text>
 
               <TouchableOpacity onPress={() => dispatch(removeFromBasket({ id: key }))}>
-                <Text className='text-[#f43f5e]'>
+                <Text className='text-rose-500'>
                   Remove
                 </Text>
               </TouchableOpacity>
@@ -103,7 +103,10 @@ const BasketScreen = () => {
             </Text>
           </View>
         
-          <TouchableOpacity className='rounded-lg bg-[#f43f5e] p-4'>
+          <TouchableOpacity
+            onPress={() => navigation.navigate('PreparingOrder')}
+            className='rounded-lg bg-rose-500 p-4'
+          >
             <Text className='text-center text-white text-lg font-bold'>
               Place Order
             </Text>

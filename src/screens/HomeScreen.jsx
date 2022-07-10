@@ -25,8 +25,8 @@ const HomeScreen = () => {
       {/* Header */}
       <View className='flex-row pb-3 items-center mx-4 space-x-2'>
         <Image
-          source={require('../../assets/techiemato.png')}
-          className='h-7 w-7 bg-gray-300 p-4 rounded-full'
+          source={{ uri: 'https://media.giphy.com/media/gsr9MG7bDvSRWWSD1Y/giphy.gif' }}
+          className='h-7 w-7 bg-gray-200 p-4 rounded-full'
         />
 
         <View className='flex-1'>
@@ -39,7 +39,10 @@ const HomeScreen = () => {
           </Text>
         </View>
 
-        <UserCircleIcon size={35} color='#f43f5e' />
+        <Image
+          source={{ uri: 'https://media.giphy.com/media/tpYaafBDNVKn1soXNI/giphy.gif' }}
+          className='h-9 w-9 bg-gray-200 p-4 rounded-full'
+        />
       </View>
 
       {/* Search */}

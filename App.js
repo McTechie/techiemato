@@ -1,7 +1,7 @@
 import { TailwindProvider } from 'tailwindcss-react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { HomeScreen, RestaurantScreen, BasketScreen, PreparingOrderScreen } from './src/screens';
+import { HomeScreen, RestaurantScreen, BasketScreen, PreparingOrderScreen, OrderConfirmedScreen } from './src/screens';
 import { Provider } from 'react-redux';
 import { store } from './src/app/store';
 
@@ -29,6 +29,11 @@ export default function App() {
             <Stack.Screen 
               name='PreparingOrder'
               component={PreparingOrderScreen}
+              options={{ presentation: 'fullScreenModal' }}
+              />
+            <Stack.Screen 
+              name='OrderConfirmed'
+              component={OrderConfirmedScreen}
               options={{ presentation: 'fullScreenModal' }}
             />
           </Stack.Navigator>
