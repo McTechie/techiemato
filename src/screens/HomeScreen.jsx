@@ -1,9 +1,25 @@
 import { View, Text, SafeAreaView, Image, TextInput, ScrollView } from 'react-native';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { AdjustmentsIcon, ChevronDownIcon, SearchIcon, UserCircleIcon } from 'react-native-heroicons/outline';
 import { Categories, FeaturedRow } from '../components';
+import sanityClient from '../../sanity';
 
 const HomeScreen = () => {
+  const [featuredCategories, setFeaturedCategories] = useState([]);
+
+  useEffect(() => {
+    sanityClient.fetch(`
+    *[_type == "featured"]{
+      ...,
+      restaurants[]->{
+        ...,
+        dishes[]->
+      }
+    }`).then(data => {
+      setFeaturedCategories(data);
+    });
+  }, []);
+
   return (
     <SafeAreaView className='bg-white pt-5'>
       {/* Header */}
@@ -44,21 +60,14 @@ const HomeScreen = () => {
       >
         <Categories />
 
-        <FeaturedRow
-          id='123'
-          title='Featured'
-          description='Paid placements from our partners'
-        />
-        <FeaturedRow
-          id='1234'
-          title='Tasty Discounts'
-          description='Everyone&#39;s been enjoying these juicy discounts!'
-        />
-        <FeaturedRow
-          id='12345'
-          title='Offers near you!'
-          description='why not support your local restaurant tonight!'
-        />
+        {featuredCategories?.map(category => (
+          <FeaturedRow
+            key={category._id}
+            id={category._id}
+            title={category.name}
+            description={category.short_description}
+          />
+        ))}
       </ScrollView>
     </SafeAreaView>
   )
