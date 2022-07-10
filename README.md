@@ -49,4 +49,4 @@
 
 ## App Walk-through
 
-<p align="center"><img alt="App Walk-through" src="./readme-utils/screencast.gif" width="200" /></p>
+<img alt="App Walk-through" src="./readme-utils/screencast.gif" width="300" />
